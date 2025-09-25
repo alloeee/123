@@ -10,12 +10,15 @@ int main() {
 
     std::cout << "$ ";
 
+    const char* home=std::getenv("HOME");
+    std::string historyPath=std::string(home)+"/.kubsh_history";
+
     std::string input;
     //std::getline(std::cin, input);
     while (std::getline(std::cin, input))
     {
-        std::ofstream history(~/.kubsh_history);
-        history << input;
+        std::ofstream history(historyPath,std::ios::app);
+        history << input<<"\n";
         std::cout << "$ ";
         if (input == "\\q")
             break;
