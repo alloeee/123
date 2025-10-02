@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Задание 1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+    <body>
+    <header>
+        <div class="header-container">
+            <img id="logo" src="logo.png" alt="Логотип">
+            <div id="site-name">
+                Лабораторная работа №2
+            </div>
+        </div>
+    </header>
+    <div class="content-block">
+        <nav class="menu">
+            <ul>
+                <li><a href="#table">Перейти к таблице</a></li>
+                <li><a href="#form">Перейти к форме</a></li>
+                <li><a href="#saveform">Перейти к сохранению формы</a></li>
+            </ul>
+        </nav>
+    </div>
+    <a id="top"></a>
+    <div class="content-block">
+        <div class="content-wrapper">
+        <div class="list-wrapper">
+        <h2>Маркированный список ссылок</h2>
+        <ul>
+            <li><a href="http://kubsu.ru/" title="Переход на сайт КубГУ">КубГУ</a></li>
+            <li><a href="https://kubsu.ru/">КубГУ (HTTPS)</a></li>
+            <li><a href="https://kubsu.ru/"> <img id="flowers" src="flower.jpg" alt="Цветок" > </a></li>
+            <li><a href="/internal/">Сокращенная внутренняя ссылка</a></li>
+            <li><a href="/">Внутренняя ссылка</a></li>
+            <li><a href="#top">Вернуться наверх</a></li>
+            <li><a href="https://kubsu.ru/?faculty=fctipm&area=mo&group=22">Три параметра</a></li>
+            <li><a href="https://moodle.kubsu.ru/course/view.php?id=780">Разработка пользовательского Web-интерфейса(ссылка с id)</a></li>
+            <li><a href="./">Текущий каталог</a></li>
+            <li><a href="about/">Каталог about</a></li>
+            <li><a href="../">Каталог уровнем выше</a></li>
+            <li><a href="../../">Каталог на 2 уровня выше</a></li>
+            <li><p>Чтобы узнать больше о поступлении посетите <a href="https://kubsu.ru">официальный сайт</a> КубГУ(контекстная в абзаце)</p></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Кубанский_государственный_университет#Факультеты">Факультеты КубГУ(фрагмент стороннего сайта)</a></li>
+            <li>
+                <img src="Kubsumap.png" usemap="#image-map" alt="Удобные ссылки КубГУ">
+                <map name="image-map">
+                    <area shape="rect" href="https://kubsu.ru/" coords="494,29,912,432" alt="Поступление в КубГУ" title="Поступление в КубГУ">
+                    <area shape="circle" href="https://www.kubsu.ru/news" coords="252,199,187" alt="Новости КубГУ" title="Новости КубГУ">
+                </map>
+            </li>
+            <li><a href="">Пустой href</a></li>
+            <li><a>Ссылка без href</a></li>
+            <li><a href="https://kubsu.ru" rel="nofollow">Запрет перехода поисковикам на КубГУ</a></li>
+            <li><!--<noindex>--><a href="https://kubsu.ru">КубГУ(запрет на индексацию Яндекса)</a><!--</noindex>--></li>
+            <li><a href="ftp://student123:123@kubsu.ru/fctipm/schedule">Ссылка на файл на сервере FTP с авторизацией</a></li>
+        </ul>
+        <h4>Пронумерованный список</h4>
+        <ol>
+            <li><a href="https://kubsu.ru/" title="Переход на сайт КубГУ для подачи документов">Как подать документы в КубГУ</a></li>
+            <li><a href="https://www.kubsu.ru/index.php" title="Главная страница официального сайта Кубанского государственного университета -">Официальный сайт КубГУ</a></li>
+            <li><a href="https://www.kubsu.ru/news" title="Последние новости и события из жизни Кубанского государственного университета">Новости КубГУ</a></li>
+        </ol>
+    </div>
+    <a id="table"></a>
+    <div class="table-wrapper">
+        <h2>Таблица</h2>
+        <div class="tablica">
+        <table class="table1">
+            <thead>
+            <tr>
+                <th>Колонка 1</th>
+                <th>Колонка 2</th>
+                <th>Колонка 3</th>
+                <th>Колонка 4</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Ячейчка 1</td>
+                <td>Ячейчка 2</td>
+                <td>Ячейчка 3</td>
+                <td>Ячейчка 4</td>
+            </tr>
+            <tr>
+                <td>Ячейка 5</td>
+                <td>Ячейка 6</td>
+                <td colspan="2">Ячейчка объединенная по горизонтали</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Ячейка объединенная по вертикали</td>
+                <td>Ячейка 7</td>
+                <td>Ячейка 8</td>
+                <td>Ячейка 9</td>
+            </tr>
+            <tr>
+                <td>Ячейка 10</td>
+                <td>Ячейка 11</td>
+                <td>Ячейка 12</td>
+            </tr>
+            <tr>
+                <td>Ячейка 13</td>
+                <td>Ячейка 14</td>
+                <td rowspan="2" colspan="2">Ячейка объединенная по горизонтали и вертикали</td>
+            </tr>
+            <tr>
+                <td>Ячейка 16</td>
+                <td>Ячейка 17</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+    <a id="form"></a>
+    <div class="content-block">
+        <h2>Форма</h2>
+        <form action="/" method="POST">
+
+            <fieldset>
+                <legend>Поле для ввода Ф.И.О</legend>
+                <label>
+                    <br>
+                    <input type="text" name="field-fio" placeholder="Шаршак Артём Иванович" required>
+                </label>
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Поле для ввода номера телефона</legend>
+                <label>
+                    <br>
+                    <input type="tel" name="field-number" placeholder="+7-(987)-654-32-10" required>
+                </label>
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Поле для ввода e-mail</legend>
+                <label>
+                    <br>
+                    <input type="email" name="field-email" placeholder="example@yandex.ru" required>
+                </label>
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Введите дату рождения</legend>
+                <label>
+                    <br>
+                    <input type="date" name="field-date" required>
+                </label>
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Выберите пол</legend>
+
+                <label>
+                    <input type="radio" name="radio-gender" value="male" required>
+                    Мужской
+                </label>
+
+                <label>
+                    <input type="radio" name="radio-gender" value="female" required>
+                    Женский
+                </label>
+            </fieldset>
+
+
+            <br>
+            <fieldset>
+                <legend>Выберите любимый язык программирования</legend>
+                <label>
+                    <br>
+                    <select name="field-programming-languages[]" multiple size="8" required>
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="c++">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Опишите краткую биографию</legend>
+                <label>
+                    <br>
+                    <textarea name="field-biography" placeholder="Опишите свою биографию" required></textarea>
+                </label>
+                <br>
+            </fieldset>
+            <label>
+                <input name="field-check" type="checkbox" required>
+                С контрактом ознакомлен(а)
+            </label>
+            <br>
+            <a id="saveform"></a>
+            <label>
+                <input value="Сохранить" type="submit">
+            </label>
+        </form>
+    </div>
+    </div>
+    <div class="footer1">
+        (с) Шаршак Артём
+    </div>
+</body>
+</html>
