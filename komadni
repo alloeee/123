@@ -1,0 +1,319 @@
+user@user-VirtualBox:~$ cd Shell/
+user@user-VirtualBox:~/Shell$ mkdir -p Shell/usr/local/bin
+user@user-VirtualBox:~/Shell$ mkdir -p Shell/src
+user@user-VirtualBox:~/Shell$ mkdir src
+user@user-VirtualBox:~/Shell$ mkdir -p usr/local/bin
+user@user-VirtualBox:~/Shell$ make
+g++ -std=c++11 -Wall -Wextra -o kubsh src/main.cpp
+user@user-VirtualBox:~/Shell$ make deb
+Подготовка структуры для deb-пакета...
+Создание control файла...
+Сборка deb-пакета...
+dpkg-deb --build build/kubsh-shell_1.0.0_amd64
+dpkg-deb: сборка пакета «kubsh-shell» в «build/kubsh-shell_1.0.0_amd64.deb».
+Пакет создан: kubsh-shell_1.0.0_amd64.deb
+user@user-VirtualBox:~/Shell$ ./kubsh
+$ echo 123
+$ 123
+$ \q
+$ user@user-VirtualBox:~/Shell$ ./
+build/  DEBIAN/ .git/   kubsh   shell   src/    usr/    
+user@user-VirtualBox:~/Shell$ ls
+build   kubsh                        main.cpp  shell  usr
+DEBIAN  kubsh-shell_1.0.0_amd64.deb  Makefile  src
+user@user-VirtualBox:~/Shell$ maked deb
+Команда «maked» не найдена. Возможно, вы имели в виду:
+  команда 'makeg' из deb-пакета xutils-dev (1:7.7+6.2)
+  команда 'make' из deb-пакета make (4.3-4.1build1)
+  команда 'make' из deb-пакета make-guile (4.3-4.1build1)
+  команда 'marked' из deb-пакета node-marked (4.2.3+ds+~4.0.7-2ubuntu1)
+  команда 'makedb' из deb-пакета libnss-db (2.2.3pre1-8build1)
+Попробуйте: sudo apt install <имя_deb-пакета>
+user@user-VirtualBox:~/Shell$ make deb
+Подготовка структуры для deb-пакета...
+Создание control файла...
+Сборка deb-пакета...
+dpkg-deb --build build/kubsh_1.0.0
+dpkg-deb: сборка пакета «kubsh» в «build/kubsh_1.0.0.deb».
+mv: не удалось выполнить stat для 'build/kubsh_1.0.0_amd64.deb': Нет такого файла или каталога
+make: *** [Makefile:40: deb] Ошибка 1
+user@user-VirtualBox:~/Shell$ make deb
+Подготовка структуры для deb-пакета...
+Создание control файла...
+Сборка deb-пакета...
+dpkg-deb --build build/kubsh_1.0.0_amd64
+dpkg-deb: сборка пакета «kubsh» в «build/kubsh_1.0.0_amd64.deb».
+Пакет создан: kubsh_1.0.0_amd64.deb
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt 
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Create and run a new container from an image
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt 
+hello-world              hello-world:latest       tyvik/kubsh_test         tyvik/kubsh_test:master
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt 
+hello-world              hello-world:latest       tyvik/kubsh_test         tyvik/kubsh_test:master
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt 
+hello-world              hello-world:latest       tyvik/kubsh_test         tyvik/kubsh_test:master
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt 
+hello-world              hello-world:latest       tyvik/kubsh_test         tyvik/kubsh_test:master
+user@user-VirtualBox:~/Shell$ docker run -v .:/mnt tyvik/kubsh_test:master 
+Подготовка структуры для deb-пакета...
+Создание control файла...
+Сборка deb-пакета...
+dpkg-deb --build build/kubsh_1.0.0_amd64
+dpkg-deb: hint: you might need to pass --root-owner-group, see <https://wiki.debian.org/Teams/Dpkg/RootlessBuilds> for further details
+dpkg-deb: building package 'kubsh' in 'build/kubsh_1.0.0_amd64.deb'.
+dpkg-deb: warning: root directory build/kubsh_1.0.0_amd64 has unusual owner or group 1000:1000
+dpkg-deb: warning: ignoring 1 warning about the control file(s)
+Пакет создан: kubsh_1.0.0_amd64.deb
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9669 kB]
+Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [5412 B]
+Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [61.0 kB]
+Fetched 9966 kB in 8s (1312 kB/s)
+Reading package lists...
+Building dependency tree...
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Installing:
+  kubsh
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 5
+  Download size: 0 B / 4988 B
+  Space needed: 0 B / 11.6 GB available
+
+Get:1 /mnt/kubsh.deb kubsh amd64 1.0.0 [4988 B]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 1.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Selecting previously unselected package kubsh.
+(Reading database ... 10315 files and directories currently installed.)
+Preparing to unpack /mnt/kubsh.deb ...
+Unpacking kubsh (1.0.0) ...
+Setting up kubsh (1.0.0) ...
+============================= test session starts ==============================
+platform linux -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- /usr/local/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /opt
+collecting ... collected 9 items
+
+test_basic.py::test_command_not_found PASSED                             [ 11%]
+test_basic.py::test_exit PASSED                                          [ 22%]
+test_basic.py::test_echo FAILED                                          [ 33%]
+test_basic.py::test_env FAILED                                           [ 44%]
+test_basic.py::test_env_list FAILED                                      [ 55%]
+test_basic.py::test_signal FAILED                                        [ 66%]
+test_basic.py::test_signal ERROR                                         [ 66%]
+test_basic.py::test_command FAILED                                       [ 77%]
+test_vfs.py::test_vfs_users FAILED                                       [ 88%]
+test_vfs.py::test_vfs_add_user FAILED                                    [100%]
+
+==================================== ERRORS ====================================
+_______________________ ERROR at teardown of test_signal _______________________
+
+    @pytest.fixture()
+    def kubsh():
+        process = subprocess.Popen(
+            PROGRAM,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        sleep(0.1)
+    
+        yield process
+    
+        if process.returncode is None:
+            stdout, stderr = process.communicate('')
+            debug(stdout, stderr)
+        sleep(0.1)
+    
+>       assert process.returncode == 0
+E       AssertionError: assert -1 == 0
+E        +  where -1 = <Popen: returncode: -1 args: ['kubsh']>.returncode
+
+conftest.py:38: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+$
+---
+
+=================================== FAILURES ===================================
+__________________________________ test_echo ___________________________________
+
+kubsh = <Popen: returncode: 0 args: ['kubsh']>
+
+    def test_echo(kubsh):
+        random_input = random_string()
+        stdout, stderr = kubsh.communicate(input=f"debug '{random_input}'\n")
+        debug(stdout, stderr)
+    
+        lines = stdout.splitlines()
+>       assert random_input in lines
+E       assert 'noQrEGHYnIZq' in ["$ $ debug 'noQrEGHYnIZq': command not found", '$ ']
+
+test_basic.py:27: AssertionError
+----------------------------- Captured stdout call -----------------------------
+$ $ debug 'noQrEGHYnIZq': command not found
+$
+---
+
+___________________________________ test_env ___________________________________
+
+kubsh = <Popen: returncode: 0 args: ['kubsh']>
+
+    def test_env(kubsh):
+        shell = os.environ.get("HOME")
+        stdout, stderr = kubsh.communicate(input="\\e $HOME\n")
+        debug(stdout, stderr)
+    
+        lines = stdout.splitlines()
+>       assert shell in lines
+E       AssertionError: assert '/root' in ['$ $ \\e $HOME: command not found', '$ ']
+
+test_basic.py:35: AssertionError
+----------------------------- Captured stdout call -----------------------------
+$ $ \e $HOME: command not found
+$
+---
+
+________________________________ test_env_list _________________________________
+
+kubsh = <Popen: returncode: 0 args: ['kubsh']>
+
+    def test_env_list(kubsh):
+        path = os.environ.get("PATH")
+        paths = path.split(":")
+        stdout, stderr = kubsh.communicate(input="\\e $PATH\n")
+        debug(stdout, stderr)
+    
+        lines = stdout.splitlines()
+>       assert set(paths) <= set(lines)
+E       AssertionError: assert {'/bin', '/sb..., '/usr/sbin'} <= {'$ ', '$ $ \...nd not found'}
+E         
+E         Extra items in the left set:
+E         '/usr/local/bin'
+E         '/usr/sbin'
+E         '/bin'
+E         '/sbin'
+E         '/usr/local/sbin'
+E         '/usr/bin'
+
+test_basic.py:44: AssertionError
+----------------------------- Captured stdout call -----------------------------
+$ $ \e $PATH: command not found
+$
+---
+
+_________________________________ test_signal __________________________________
+
+kubsh = <Popen: returncode: None args: ['kubsh']>
+
+    def test_signal(kubsh):
+        sleep(0.1)
+        kubsh.send_signal(signal.SIGHUP)
+        sleep(0.1)
+    
+        kubsh.stdin.write("\\q\n")
+>       kubsh.stdin.flush()
+E       BrokenPipeError: [Errno 32] Broken pipe
+
+test_basic.py:52: BrokenPipeError
+_________________________________ test_command _________________________________
+
+kubsh = <Popen: returncode: 0 args: ['kubsh']>
+users = <_io.TextIOWrapper name='/etc/passwd' mode='r' encoding='utf-8'>
+
+    def test_command(kubsh, users):
+        content = users.read()
+        stdout, stderr = kubsh.communicate(input="cat /etc/passwd\n")
+        debug(stdout, stderr)
+    
+>       assert content in stdout
+E       AssertionError: assert 'root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\n' in '$ $ cat /etc/passwd: command not found\n$ '
+
+test_basic.py:64: AssertionError
+----------------------------- Captured stdout call -----------------------------
+$ $ cat /etc/passwd: command not found
+$
+---
+
+________________________________ test_vfs_users ________________________________
+
+kubsh = <Popen: returncode: None args: ['kubsh']>
+users = [['root', 'x', '0', '0', 'root', '/root', ...]]
+vfs = PosixPath('/opt/users')
+
+    def test_vfs_users(kubsh, users, vfs):
+        content = users.readlines()
+        users = [line.strip().split(":") for line in content if line.endswith('sh\n')]
+    
+        vfs_users = [item for item in vfs.iterdir() if item.is_dir()]
+>       assert set([user.name for user in vfs_users]) == set([user[0] for user in users])
+E       AssertionError: assert set() == {'root'}
+E         
+E         Extra items in the right set:
+E         'root'
+E         
+E         Full diff:
+E         + set()
+E         - {
+E         -     'root',
+E         - }
+
+test_vfs.py:21: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+$
+---
+
+______________________________ test_vfs_add_user _______________________________
+
+kubsh = <Popen: returncode: None args: ['kubsh']>, vfs = PosixPath('/opt/users')
+
+    def test_vfs_add_user(kubsh, vfs):
+        username = random_string().lower()
+        (vfs / username).mkdir(parents=True, exist_ok=True)
+        user = None
+        with open("/etc/passwd", "r") as f:
+            for line in f:
+                if line.startswith(username):
+                    user = line.strip().split(':')
+    
+>       assert user is not None
+E       assert None is not None
+
+test_vfs.py:35: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+$
+---
+
+=========================== short test summary info ============================
+FAILED test_basic.py::test_echo - assert 'noQrEGHYnIZq' in ["$ $ debug 'noQrE...
+FAILED test_basic.py::test_env - AssertionError: assert '/root' in ['$ $ \\e ...
+FAILED test_basic.py::test_env_list - AssertionError: assert {'/bin', '/sb......
+FAILED test_basic.py::test_signal - BrokenPipeError: [Errno 32] Broken pipe
+FAILED test_basic.py::test_command - AssertionError: assert 'root:x:0:0:root:...
+FAILED test_vfs.py::test_vfs_users - AssertionError: assert set() == {'root'}
+FAILED test_vfs.py::test_vfs_add_user - assert None is not None
+ERROR test_basic.py::test_signal - AssertionError: assert -1 == 0
+===================== 7 failed, 2 passed, 1 error in 2.26s =====================
+user@user-VirtualBox:~/Shell$
